@@ -1,15 +1,23 @@
 cmake_minimum_required(VERSION 3.0.0)
 
+# -----------------------------------------------
+# Create project
 project(LoggerTest)
 
-set(Common_SRCS
-Logger.cxx
-Object.cxx
-Module.cxx
+
+# -----------------------------------------------
+# Create Executable
+set(EXE_SRCS
+  LoggerTest.cxx
+  EchoModule.cxx
 )
 
-add_library(Common ${Common_SRCS})
+add_executable(LoggerTest ${EXE_SRCS})
 
-add_executable(LoggerTest LoggerTest.cxx EchoModule.cxx)
-target_link_libraries(LoggerTest Common)
+# -----------------------------------------------
+# Create and Import Libraries
+include_directories("${PROJECT_SOURCE_DIR}/Core")
+add_subdirectory(Core)
+
+target_link_libraries(LoggerTest Core)
 
