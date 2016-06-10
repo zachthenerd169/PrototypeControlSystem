@@ -10,6 +10,7 @@ project(LoggerTest)
 set(EXE_SRCS
   LoggerTest.cxx
   EchoModule.cxx
+  ReverseEchoModule.cxx
 )
 
 add_executable(LoggerTest ${EXE_SRCS})
