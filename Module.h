@@ -10,6 +10,11 @@
 class Module : public Object
 {
 public:
+  // Standard Typedefs
+  typedef Module                        Self;
+  typedef std::shared_ptr<Module>       Pointer;
+  typedef std::shared_ptr<const Module> ConstPointer;
+
   Module(std::string _name="");
   virtual ~Module();
   void newMessage(std::string _msg);

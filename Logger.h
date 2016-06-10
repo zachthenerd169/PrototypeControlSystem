@@ -9,6 +9,11 @@
 class Logger
 {
 public:
+  // Standard Typedefs
+  typedef Logger                        Self;
+  typedef std::shared_ptr<Logger>       Pointer;
+  typedef std::shared_ptr<const Logger> ConstPointer;
+
   static constexpr int INFO  =0;
   static constexpr int DEBUG =1;
   static constexpr int WARN  =2;
